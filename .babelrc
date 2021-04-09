@@ -1,0 +1,10 @@
+{
+    //trabajar con JS moderno
+    "presets": [
+        "@babel/preset-env"
+    ],
+    //permite trabajar con async-await
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+    ]
+}
