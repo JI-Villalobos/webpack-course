@@ -1,6 +1,7 @@
 const { type } = require('os')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 /**@type {import('webpack').Configuration}*/
 
@@ -31,6 +32,16 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                //usa archivos con extención css y .styl
+                test: /\.css|.styl$/i,
+                //especifica el loader
+                use:[
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'stylus-loader'
+                ],
             }
         ]
     },
@@ -41,6 +52,7 @@ module.exports = {
             template: './public/index.html',
             //archivo que comolacara en la carpeta de dist
             filename: './index.html'
-        })
+        }),
+        new MiniCssExtractPlugin(),
     ]
 }
