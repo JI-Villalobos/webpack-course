@@ -19,6 +19,7 @@ module.exports = {
         assetModuleFilename: 'assets/images/[hash][ext][query]'
     },
     mode:'development',
+    watch:true,
     /*Extenciones del proyecto*/
     resolve: {
         extensions: ['.js'],
