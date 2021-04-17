@@ -20,6 +20,7 @@ module.exports = {
         assetModuleFilename: 'assets/images/[hash][ext][query]'
     },
     mode:'development',
+    devtool: 'source-map',
     //watch:true,
     /*Extenciones del proyecto*/
     resolve: {
@@ -95,7 +96,7 @@ module.exports = {
             ]
         }),
         new Dotenv(),
-        new BundlerAnalyzerPlugin(),
+        
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
